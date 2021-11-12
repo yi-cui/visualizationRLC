@@ -6,7 +6,6 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 import pprint
-import vega_datasets
 from vega_datasets import data
 
 #Import all data
