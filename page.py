@@ -6,7 +6,6 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 import pprint
-from vega_datasets import data
 
 #Import all data
 
@@ -311,7 +310,7 @@ barchartred = base3.mark_bar(color = 'darkred').encode(
 vis3 = (barchartblue + barchartred).resolve_scale(y='shared').properties(title = 'Top & Bottom 10 Counties according to your preference', width = 300,height = 300)
 
 
-states = alt.topo_feature(data.us_10m.url, feature='counties')
+states = alt.topo_feature('https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json', feature='counties')
 # US states background
 background = alt.Chart(states).mark_geoshape(
     fill='lightgray',
